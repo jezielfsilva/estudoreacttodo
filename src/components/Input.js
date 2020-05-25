@@ -10,10 +10,25 @@ const InputFrm = styled.input`
     outline: none;
 `;
 
-const Input = (props) => {
+const Label = styled.label`
+    display: flex;
+    flex-direction: column;
+
+    p{
+        color: #970620;
+        margin-left: 0.5rem;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.5em;
+    }
+`;
+
+export default function Input(props) {
     return (
-        <InputFrm type={props.type} ref={props.ref} placeholder={props.placeholder}/>
+        <>
+            <Label>
+                <p>{props.labelText}</p>
+                <InputFrm type={props.type} ref={props.func} placeholder={props.placeholder}/>
+            </Label>
+        </>
     );
 }
-
-export default Input;
